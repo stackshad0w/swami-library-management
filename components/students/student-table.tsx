@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -140,11 +139,10 @@ export function StudentTable({ students, courses }: StudentTableProps) {
                     <TableCell>
                       {student.photo_url ? (
                         <div className="relative h-8 w-8 rounded-full overflow-hidden">
-                          <Image
+                          <img
                             src={student.photo_url}
                             alt={student.name}
-                            fill
-                            className="object-cover"
+                            className="object-cover w-full h-full"
                           />
                         </div>
                       ) : (

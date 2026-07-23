@@ -19,7 +19,6 @@ import {
   Clock,
   CheckCircle2,
 } from "lucide-react";
-import Image from "next/image";
 import type { Student, AppSettings } from "@/lib/types";
 import {
   formatDate,
@@ -119,7 +118,7 @@ export default function RemindersPage() {
       <div className="flex items-center gap-4 rounded-xl border border-border/50 bg-card px-4 py-3.5 hover:bg-muted/20 transition-colors">
         {student.photo_url ? (
           <div className="relative h-10 w-10 rounded-full overflow-hidden flex-shrink-0">
-            <Image src={student.photo_url} alt={student.name} fill className="object-cover" />
+            <img src={student.photo_url!} alt={student.name} className="object-cover w-full h-full" />
           </div>
         ) : (
           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary text-sm font-bold flex-shrink-0">

@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState } from "react";
-import Image from "next/image";
 import { Camera, X, User } from "lucide-react";
 import { toast } from "sonner";
 
@@ -102,11 +101,10 @@ export function PhotoUpload({ value, onChange, onFileChange }: PhotoUploadProps)
       >
         {preview ? (
           <>
-            <Image
+            <img
               src={preview}
               alt="Student photo"
-              fill
-              className="object-cover cursor-zoom-in"
+              className="object-cover cursor-zoom-in w-full h-full"
               onClick={(e) => {
                 e.stopPropagation();
                 setLightbox(true);
@@ -149,12 +147,10 @@ export function PhotoUpload({ value, onChange, onFileChange }: PhotoUploadProps)
           onClick={() => setLightbox(false)}
         >
           <div className="relative max-w-2xl max-h-[90vh] w-full mx-4">
-            <Image
+            <img
               src={preview}
               alt="Full photo"
-              width={800}
-              height={800}
-              className="rounded-xl object-contain w-full h-full"
+              className="rounded-xl object-contain w-full h-auto max-h-[80vh]"
             />
             <button
               onClick={() => setLightbox(false)}

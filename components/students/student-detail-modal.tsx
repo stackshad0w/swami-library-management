@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { createClient } from "@/lib/supabase/server";
 import {
   Dialog,
@@ -68,7 +67,7 @@ export function StudentDetailModal({ student, onClose }: StudentDetailModalProps
             <div className="flex items-start gap-5 mb-6">
               <div className="relative h-20 w-20 rounded-2xl overflow-hidden flex-shrink-0">
                 {student.photo_url ? (
-                  <Image src={student.photo_url} alt={student.name} fill className="object-cover" />
+                  <img src={student.photo_url!} alt={student.name} className="object-cover w-full h-full" />
                 ) : (
                   <div className="flex h-full w-full items-center justify-center bg-primary/10 text-primary text-2xl font-bold">
                     {student.name.charAt(0)}

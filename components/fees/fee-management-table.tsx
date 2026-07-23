@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -101,7 +100,7 @@ export function FeeManagementTable({ students, courses }: FeeManagementTableProp
                 {/* Avatar */}
                 <div className="relative h-10 w-10 rounded-full overflow-hidden flex-shrink-0">
                   {student.photo_url ? (
-                    <Image src={student.photo_url} alt={student.name} fill className="object-cover" />
+                    <img src={student.photo_url!} alt={student.name} className="object-cover w-full h-full" />
                   ) : (
                     <div className="flex h-full w-full items-center justify-center bg-primary/10 text-primary text-sm font-bold">
                       {student.name.charAt(0)}
